@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
  <title>READ JSON Example (getJSON)</title>
- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE9xL0Zc9mM3wp7kFMxxE8-t1fC_HK23c"></script>
 
 <script language="javascript">
@@ -15,7 +15,9 @@ var Longitude = undefined;
 function getMapLocation() {
 
     navigator.geolocation.getCurrentPosition
-    (onMapSuccess, onMapError, { enableHighAccuracy: true });
+    (onMapSuccess, onMapError, { enableHighAccuracy: false,
+                    timeout: 10000,
+                    maximumAge: 10000 });
 }
 
 // Success callback for get geo coordinates
@@ -84,10 +86,12 @@ function watchMapPosition() {
     return navigator.geolocation.watchPosition
     (onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
 }
+ 
 getMapLocation();
  </script>
 </head>
 <body>
- <div id="map" style="position: relative;overflow: auto;width: 100%;height: 100vh;"></div>
+<h1 align="center">Map Test</h1>
+ <div id="map" style="position: relative;overflow: auto;width: 100%;height: 90vh;"></div>
 </body>
 </html>
