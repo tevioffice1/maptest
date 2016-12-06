@@ -84,10 +84,10 @@ function watchMapPosition() {
     return navigator.geolocation.watchPosition
     (onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
 }
-
+getMapLocation();
  </script>
 </head>
 <body>
- <div id="map"></div>
+ <div id="map" style="position: relative;overflow: auto;width: 100%;height: 100vh;"></div>
 </body>
 </html>
